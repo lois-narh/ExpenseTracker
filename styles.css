@@ -1,0 +1,253 @@
+:root {
+  /* Color Palette */
+  --color-primary: #2c3e50;
+  --color-secondary: #3498db;
+  --color-accent: #2ecc71;
+  --color-warning: #e74c3c;
+  --color-background: #f4f6f7;
+  --color-text: #2c3e50;
+  --color-white: #ffffff;
+  --color-light-grey: #ecf0f1;
+
+  /* Typography */
+  --font-primary: "Inter", sans-serif;
+  --font-size-base: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container-title {
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--color-secondary);
+  font-size: 1rem;
+}
+
+.notification {
+  display: none;
+  background-color: var(--color-warning);
+  color: var(--color-white);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification.error {
+  display: flex;
+}
+
+.notification i {
+  font-size: 1.5rem;
+}
+
+.budget_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  background-color: var(--color-light-grey);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 6px;
+  font-size: var(--font-size-base);
+}
+
+.hint {
+  color: var(--color-secondary);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.btn {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-primary);
+}
+
+.overview .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background-color: var(--color-light-grey);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon i {
+  font-size: 2.5rem;
+  color: var(--color-secondary);
+}
+
+.card-content h2 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.expense-list h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.table_data {
+  background-color: var(--color-light-grey);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-light-grey);
+}
+
+.table_tr_content button {
+  background-color: var(--color-warning);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.table_tr_content button.edit {
+  background-color: var(--color-secondary);
+}
+
+.table_tr_content button:hover {
+  opacity: 0.9;
+}
+.btn_edit {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.btn_delete {
+    background-color: var(--color-warning);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn_edit:hover, .btn_delete:hover {
+    opacity: 0.8;
+}
+.reset-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-reset {
+    background-color: var(--color-warning);
+    color: var(--color-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: #C0392B; /* Darker red for hover effect */
+}
+

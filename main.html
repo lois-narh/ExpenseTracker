@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Companion - Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="container-title">Financial Companion</h1>
+            <p class="subtitle">Track Your Expenses Smartly</p>
+        </header>
+
+        <div class="notification error_message" role="alert" aria-live="assertive">
+            <i class="bx bx-error-circle"></i>
+            <p>Please enter a valid budget amount greater than 0</p>
+        </div>
+
+        <main>
+            <section class="budget_content">
+                <div class="input-group ur_budget">
+                    <form id="budget-form" aria-label="Budget Input Form">
+                        <div class="form-control">
+                            <label for="budget-input">Your Budget:</label>
+                            <input 
+                                type="number" 
+                                id="budget-input" 
+                                class="budget_input" 
+                                placeholder="Enter Your Budget" 
+                                min="1" 
+                                required 
+                                aria-describedby="budget-hint"
+                            >
+                            <small id="budget-hint" class="hint">Minimum budget: $1</small>
+                        </div>
+                        <button type="submit" class="btn" id="btn_budget">Calculate</button>
+                    </form>
+                </div>
+
+                <div class="input-group ur_expenses">
+                    <form id="expenses-form" aria-label="Expenses Input Form">
+                        <div class="form-control">
+                            <label for="expense-name">Expense Name:</label>
+                            <input 
+                                type="text" 
+                                id="expense-name" 
+                                class="expenses_input" 
+                                placeholder="e.g., Groceries" 
+                                required
+                            >
+                        </div>
+                        <div class="form-control">
+                            <label for="expense-amount">Amount:</label>
+                            <input 
+                                type="number" 
+                                id="expense-amount" 
+                                class="expenses_amount" 
+                                placeholder="Enter Amount" 
+                                min="0.01" 
+                                step="0.01" 
+                                required
+                            >
+                        </div>
+                        <button type="submit" class="btn" id="btn_expenses">Add Expense</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="overview">
+                <div class="cards">
+                    <div class="card budget-card">
+                        <div class="card-icon">
+                            <i class="bx bx-money"></i>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="budget_card">$0</h2>
+                            <p>Total Budget</p>
+                        </div>
+                    </div>
+                    <div class="card expenses-card">
+                        <div class="card-icon">
+                            <i class="bx bx-credit-card"></i>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="expenses_card">$0</h2>
+                            <p>Total Expenses</p>
+                        </div>
+                    </div>
+                    <div class="card balance-card">
+                        <div class="card-icon">
+                            <i class="bx bx-dollar"></i>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="balance_card">$0</h2>
+                            <p>Remaining Balance</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="expense-list">
+                <h2>Expense Details</h2>
+                <div class="table_data">
+                    <table id="expense-table" aria-label="Expense Tracking Table">
+                        <thead>
+                            <tr>
+                                <th>Expense</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbl_tr_content"></tbody>
+                    </table>
+                </div>
+            </section>
+            <div class="reset-container">
+                <button id="reset-btn" class="btn btn-reset">Clear Budget</button>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>
